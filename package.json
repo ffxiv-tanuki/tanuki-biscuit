@@ -1,19 +1,22 @@
 {
   "name": "tanuki-biscuit",
   "version": "1.0.0",
-  "description": "| Feature                        | **Bot**                                                 | **App**                                                                                          |\r | ------------------------------ | ------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |\r | **Definition**                 | Program that connects via a bot token to automate tasks | The entire container for bots, slash commands, interactions                                      |\r | **Technical Identity**         | Specific user with a bot token & permissions            | Registered entity in the [Discord Developer Portal](https://discord.com/developers/applications) |\r | **Components**                 | Message handling, events, commands                      | Encompasses bots, slash commands, buttons, modals, webhooks                                      |\r | **Slash Commands**             | Originally optional for bots, now standard              | Apps define slash commands globally or per guild                                                 |\r | **Interactions API**           | Handled by bots that are part of apps                   | Apps own interactions like buttons, selects, modals                                              |\r | **OAuth2 Scopes**              | `bot` scope gives you a bot in servers                  | `applications.commands` registers slash commands                                                 |\r | **Monetization / Marketplace** | Bots can be listed in public marketplaces               | Apps themselves are the listing unit (includes bots)                                             |\r | **User Perception**            | Bots are seen as the thing talking in chat              | Apps are seen in OAuth screens, settings, dev portal                                             |",
-  "main": "index.js",
+  "description": "Tanuki Biscuit Discord App - Supports bots, slash commands, interactions, and more.",
+  "main": "dist/index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "ts-node src/index.ts",
+    "deploy": "ts-node src/deploy-commands.ts",
+    "build": "tsc",
+    "start": "node dist/index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ffxiv-tanuki/tanuki-biscuit.git"
+    "url": "https://github.com/ffxiv-tanuki/tanuki-biscuit.git"
   },
-  "keywords": [],
+  "keywords": ["discord", "bot", "app", "tanuki", "ffxiv"],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "bugs": {
     "url": "https://github.com/ffxiv-tanuki/tanuki-biscuit/issues"
   },
